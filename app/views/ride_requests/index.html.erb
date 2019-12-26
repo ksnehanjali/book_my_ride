@@ -1,0 +1,17 @@
+<h1>
+  You're on ride request
+</h1>
+
+<table border = 2 cellpadding="2">
+  <tr>
+    <th>Destination</th>
+    <th>Name</th>
+  </tr>
+
+  <% @requests.each do |req| %>
+  <tr>
+    <td> <%= req.destination %> </td>
+    <td> <%= req.user.first_name + " " + req.user.last_name %> </td>
+  </tr>  
+  <% end %>
+</table>  

@@ -16,7 +16,7 @@ class Cab < ApplicationRecord
   validates :cab_number, uniquesness: true
   validates_with NumberOfSeatsValidator
   after_validation do |cab|
-    puts "Object validated.."`
+    puts "Object validated.."
   end
 
 end
