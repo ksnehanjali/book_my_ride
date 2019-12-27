@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :rides do
     resources :ride_requests
   end
+  resources :users
 end

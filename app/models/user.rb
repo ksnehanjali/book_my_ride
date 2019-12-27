@@ -10,4 +10,11 @@ class User < ApplicationRecord
     self.last_name = self.last_name.titleize
   end
 
+  after_create do |user|
+    puts "User created successfully.."
+  end  
+
+  def full_name
+    first_name + " " + last_name
+  end
 end

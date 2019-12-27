@@ -6,4 +6,8 @@ class RidesController < ApplicationController
 
     @rides_list = Ride.all.includes(:driver)
   end
+
+  def new
+    
+  end  
 end

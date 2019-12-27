@@ -1,0 +1,40 @@
+/ %form{action:"/users", method:"POST"}
+/   First Name:
+/   %br
+/   %input{:name=>"first_name", :type => "text", :id=>"user[first_name]"}
+/   %br
+/   Last Name:
+/   %br
+/   %input{:name=>"last_name", :type => "text", :id=>"user[last_name]"}
+/   %br
+/   %input{:type=>"Submit", :value=>"Submit"}
+
+= form_with(url: "/users", method: "POST") do
+  = label_tag(:first_name, "First Name:")
+  %br
+  = text_field_tag(:first_name)
+  %br
+  = label_tag(:last_name, "Last Name:")
+  %br
+  = text_field_tag(:last_name)
+  %br
+  = label_tag(:contact_number, "Contact Number:")
+  %br
+  = text_field_tag(:contact_number)
+  %br
+  = label_tag(:employee_id, "Employee ID:")
+  %br
+  = text_field_tag(:employee_id)
+  %br
+  = label_tag(:email_id, "Email ID:")
+  %br
+  = text_field_tag(:email_id)
+  %br
+  = label_tag(:password, "Password:")
+  %br
+  = password_field_tag(:password)
+  %br
+  = submit_tag("Submit")
+
+%br
+= button_to "Go Back", users_path 
