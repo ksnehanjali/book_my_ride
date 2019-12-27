@@ -1,3 +1,22 @@
+<style>
+#heading{
+  text-align: center;
+  padding: 20px;
+  background-color: #aaaaaa;
+  color: black;
+}
+
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 30%;
+}
+</style>
+
+<div id="heading">
+  <h1>Josh Cab Booking</h1>
+</div>
+
 <h1>
   You're on ride request
 </h1>
@@ -6,12 +25,14 @@
   <tr>
     <th>Destination</th>
     <th>Name</th>
+    <th>Status</th>
   </tr>
 
   <% @requests.each do |req| %>
   <tr>
     <td> <%= req.destination %> </td>
     <td> <%= req.user.first_name + " " + req.user.last_name %> </td>
+    <td> <%= req.status %> </td>
   </tr>  
   <% end %>
 </table>  

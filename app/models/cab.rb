@@ -10,7 +10,6 @@ class NumberOfSeatsValidator < ActiveModel::Validator
 end
 
 class Cab < ApplicationRecord
-  
   has_many :rides
   validates :cab_number, :number_of_seats, presence: true
   validates :cab_number, uniquesness: true

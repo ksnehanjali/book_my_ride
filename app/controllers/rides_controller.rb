@@ -4,6 +4,6 @@ class RidesController < ApplicationController
     ride_count = Ride.count
     @count = ride_count
 
-    @rides_list = Ride.all  
+    @rides_list = Ride.all.includes(:driver)
   end
 end

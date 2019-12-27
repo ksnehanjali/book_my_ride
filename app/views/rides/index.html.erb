@@ -1,6 +1,27 @@
-<h1>Rides</h1>
+<style>
+#heading{
+  text-align: center;
+  padding: 20px;
+  background-color: #aaaaaa;
+  color: black;
+}
 
-<p><%= @count %></p>
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+tr:nth-child(even) {
+  background-color: #f0b596;
+}
+</style>
+
+<div id="heading">
+  <h1>Josh Cab Booking</h1>
+</div>
+
+<h2>Showing All Rides</h2>
 
 <table border=3 cellpadding="5" cellspacing="3">
 
@@ -10,16 +31,16 @@
     <th>Time</th>
     <th>Location</th>
     <th>Driver Name</th>
-    <th>View Request</th>
+    <th>Requests</th>
   </tr>
 
   <% @rides_list.each do |ride| %>
     <tr>
       <td><%= ride.id %></td>
-      <td><%= ride.date %></td>
-      <td><%= ride.time %></td>
+      <td><%= ride.date.strftime("%d-%m-%Y") %></td>
+      <td><%= ride.time.strftime("%H:%M%p") %></td>
       <td><%= ride.location %></td>
-      <td><%= ride.driver.first_name + " " + ride.driver.last_name %></td>
+      <td><%= ride.driver_name %></td>
       <td><%= link_to 'View Request', ride_ride_requests_path(ride)%></td>
     </tr>
   <% end %>
